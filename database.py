@@ -102,7 +102,7 @@ class DBManager:
         query = """
             SELECT c.name, COUNT(f.id) as aeroplane_count
             FROM countries c
-            LEFT JOIN flights f ON c.id = f.id
+            LEFT JOIN flights f ON c.id = f.country_id
             GROUP BY c.id, c.name
             ORDER BY aeroplane_count DESC;
             """
